@@ -87,7 +87,7 @@ function showPage(name){
     const page=$('#page-'+name);
     if(page){
       const items=page.querySelectorAll('.dash-card,.card,.playbook-card,.pnl-card,.settings-section,.insight-item,.activity-item,.kb-table tbody tr,#cf-summary > div,#kpi-grid > div,#trending-grid > div,#comp-grid > div,#comp-ads > div,#integrations-list > div > div');
-      const max=15;items.forEach((el,i)=>{if(i<max){el.style.opacity='0';el.style.animation='staggerFade .3s ease '+(i*30)+'ms forwards';}else{el.style.opacity='1';el.style.animation='none';}});
+      const max=15;items.forEach((el,i)=>{if(i<max){el.style.animation='staggerFade .25s ease '+(i*25)+'ms both';}else{el.style.animation='none';el.style.opacity='1';}});
     }
   },10);
 }
@@ -1442,7 +1442,7 @@ function applyStagger(container,selector){
   const items=container.querySelectorAll(selector);
   const max=15;
   items.forEach((el,i)=>{
-    if(i<max){el.style.opacity='0';el.style.animation='staggerFade .3s ease '+(i*30)+'ms forwards';}
+    if(i<max){el.style.animation='staggerFade .25s ease '+(i*25)+'ms both';}
     else{el.style.opacity='1';el.style.animation='none';}
   });
 }
