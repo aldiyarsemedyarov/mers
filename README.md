@@ -47,6 +47,6 @@ Single-file HTML/CSS/JS. No frameworks, no build step, no dependencies. Just ope
 
 ## About
 
-Built by [Aldiyar Semedyarov](https://linkedin.com/in/semedyarov) — MSc Electrical Engineering, ETH Zurich.
+Built by [Aldiyar Semedyarov](https://linkedin.com/in/semedyarov).
 
 Built this because I run an e-commerce store solo and was drowning in 10+ tools that don't talk to each other. Mers is the autonomous COO for the 4.6M Shopify stores that can't afford one.
