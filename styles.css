@@ -33,8 +33,8 @@ a{color:var(--accent);text-decoration:none}
 .status-pill{font-size:10.5px;padding:4px 10px;border-radius:20px;background:rgba(46,213,115,.1);color:var(--green);font-weight:600;display:flex;align-items:center;gap:5px;border:1px solid rgba(46,213,115,.2)}
 .status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{transform:translateY(4px)}to{transform:translateY(0)}}
+@keyframes slideUp{from{transform:translateY(6px)}to{transform:translateY(0)}}
 @keyframes countUp{from{opacity:0}to{opacity:1}}
 .avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#000;cursor:pointer}
 
@@ -283,14 +283,14 @@ sidebar-item.active{background:var(--accent-bg);color:var(--accent);font-weight:
 }
 
 /* ENHANCED ANIMATIONS */
-@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes staggerFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pageIn{from{transform:translateY(6px)}to{transform:translateY(0)}}
+@keyframes staggerFade{from{transform:translateY(6px)}to{transform:translateY(0)}}
 @keyframes modalIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
 @keyframes notifSlide{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideInLeft{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideInRight{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInLeft{from{transform:translateX(-8px)}to{transform:translateX(0)}}
+@keyframes slideInRight{from{transform:translateX(8px)}to{transform:translateX(0)}}
 
-.stagger-in{opacity:0;animation:staggerFade .4s ease forwards}
+.stagger-in{animation:staggerFade .3s ease both}
 
 /* Card hover enhancements */
 .dash-card,.playbook-card,.pnl-card{transition:all .2s ease}
