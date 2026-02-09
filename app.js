@@ -88,9 +88,10 @@ function showPage(name){
     if(page){
       const items=page.querySelectorAll('.dash-card,.card,.playbook-card,.pnl-card,.settings-section,.insight-item,.activity-item,.kb-table tbody tr,#cf-summary > div,#kpi-grid > div,#trending-grid > div,#comp-grid > div,#comp-ads > div,#integrations-list > div > div');
       items.forEach((el,i)=>{
+        el.style.opacity='0';
         el.style.animation='none';
         el.offsetHeight;
-        el.style.animation='staggerFade .3s ease '+(Math.min(i,20)*25)+'ms both';
+        el.style.animation='staggerFade .4s ease '+(i*40)+'ms both';
       });
     }
   });
@@ -1494,7 +1495,8 @@ function applyStagger(container,selector){
   if(!container)return;
   const items=container.querySelectorAll(selector);
   items.forEach((el,i)=>{
-    el.style.animation='staggerFade .25s ease '+(Math.min(i,20)*25)+'ms both';
+    el.style.opacity='0';
+    el.style.animation='staggerFade .4s ease '+(i*40)+'ms both';
   });
 }
 
