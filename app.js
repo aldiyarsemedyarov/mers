@@ -97,6 +97,53 @@ function showPage(name){
   });
 }
 
+/* ===== DRAG & DROP ===== */
+let _dragTaskId=null;
+window._wasDragged=false;
+
+function onDragStart(e,taskId){
+  _dragTaskId=taskId;
+  window._wasDragged=false;
+  e.dataTransfer.effectAllowed='move';
+  e.dataTransfer.setData('text/plain',taskId);
+  e.target.style.opacity='.4';
+  e.target.style.transform='rotate(2deg)';
+  // Highlight all drop zones
+  $$('.kanban-drop').forEach(d=>d.classList.add('drag-active'));
+}
+
+function onDragEnd(e){
+  e.target.style.opacity='1';
+  e.target.style.transform='';
+  $$('.kanban-drop').forEach(d=>{d.classList.remove('drag-active');d.classList.remove('drag-over');});
+  _dragTaskId=null;
+}
+
+function onDragOver(e){
+  e.preventDefault();
+  e.dataTransfer.dropEffect='move';
+  e.currentTarget.classList.add('drag-over');
+}
+
+function onDragLeave(e){
+  e.currentTarget.classList.remove('drag-over');
+}
+
+function onDrop(e,colId){
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  const taskId=parseInt(e.dataTransfer.getData('text/plain'));
+  const t=tasks.find(x=>x.id===taskId);
+  if(t&&t.col!==colId){
+    const oldCol=t.col;
+    t.col=colId;
+    window._wasDragged=true;
+    renderTasks();
+    addActivity('human',`<strong>Aldiyar</strong> moved <strong>${t.title}</strong> to ${cols.find(c=>c.id===colId)?.label||colId}`);
+  }
+  $$('.kanban-drop').forEach(d=>{d.classList.remove('drag-active');d.classList.remove('drag-over');});
+}
+
 /* ===== MODAL ===== */
 function openModal(html){$('#modal-content').innerHTML=html;$('#modal-overlay').classList.add('open')}
 function closeModal(){$('#modal-overlay').classList.remove('open')}
@@ -151,7 +198,8 @@ function renderTasks(){
           <button class="col-add" onclick="openNewTaskModal('${c.id}')">+</button>
         </div>
       </div>
-      ${colTasks.map(t=>`<div class="card${t.id===9?' highlighted':''}" onclick="openTaskDetail(${t.id})">
+      <div class="kanban-drop" data-col="${c.id}" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event,'${c.id}')">
+      ${colTasks.map(t=>`<div class="card${t.id===9?' highlighted':''}" draggable="true" ondragstart="onDragStart(event,${t.id})" ondragend="onDragEnd(event)" onclick="if(!window._wasDragged)openTaskDetail(${t.id})" data-task-id="${t.id}">
         <div class="card-title"><span class="card-priority ${t.priority}"></span>${t.title}</div>
         <div class="card-desc">${t.desc}</div>
         <div class="card-meta">
@@ -160,6 +208,7 @@ function renderTasks(){
         </div>
         ${t.impact?`<div class="card-impact">${t.impact}</div>`:''}
       </div>`).join('')}
+      </div>
     </div>`;
   }).join('');
   // Update global stats
