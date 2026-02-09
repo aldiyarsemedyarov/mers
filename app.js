@@ -82,7 +82,19 @@ function showPage(name){
   if(name==='cashflow')renderCashFlow();
   if(name==='account')renderAccount();
   if(name==='settings')renderSettings();
-
+  // Stagger animation on tab switch
+  requestAnimationFrame(()=>{
+    const page=$('#page-'+name);
+    if(page){
+      const items=page.querySelectorAll('.dash-card,.card,.playbook-card,.pnl-card,.settings-section,.insight-item,.activity-item,.kb-table tbody tr,#cf-summary > div,#kpi-grid > div,#trending-grid > div,#comp-grid > div,#comp-ads > div,#integrations-list > div > div');
+      const max=15;items.forEach((el,i)=>{
+        el.style.animation='none';
+        el.offsetHeight;
+        if(i<max){el.style.animation='staggerFade .35s ease '+(i*40)+'ms both';}
+        else{el.style.opacity='1';}
+      });
+    }
+  });
 }
 
 /* ===== MODAL ===== */
