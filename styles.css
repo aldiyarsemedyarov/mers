@@ -290,7 +290,7 @@ sidebar-item.active{background:var(--accent-bg);color:var(--accent);font-weight:
 @keyframes slideInLeft{from{transform:translateX(-8px)}to{transform:translateX(0)}}
 @keyframes slideInRight{from{transform:translateX(8px)}to{transform:translateX(0)}}
 
-.stagger-in{animation:staggerFade .3s ease both}
+
 
 /* Card hover enhancements */
 .dash-card,.playbook-card,.pnl-card{transition:all .2s ease}
@@ -306,9 +306,9 @@ sidebar-item.active{background:var(--accent-bg);color:var(--accent);font-weight:
 .notif-panel.open{animation:notifSlide .2s ease}
 
 /* Chat message animations */
-.chat-msg.agent{animation:slideInLeft .3s ease}
-.chat-msg.user{animation:slideInRight .3s ease}
-.chat-msg.system{animation:staggerFade .3s ease}
+
+
+
 
 /* Account & Settings page styles */
 .settings-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px}
