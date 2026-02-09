@@ -87,11 +87,11 @@ function showPage(name){
     const page=$('#page-'+name);
     if(page){
       const items=page.querySelectorAll('.dash-card,.card,.playbook-card,.pnl-card,.settings-section,.insight-item,.activity-item,.kb-table tbody tr,#cf-summary > div,#kpi-grid > div,#trending-grid > div,#comp-grid > div,#comp-ads > div,#integrations-list > div > div');
-      const max=15;items.forEach((el,i)=>{
+      const max=12;items.forEach((el,i)=>{
         el.style.animation='none';
         el.offsetHeight;
         if(i<max){el.style.animation='staggerFade .35s ease '+(i*40)+'ms both';}
-        else{el.style.opacity='1';}
+        else{el.style.opacity='1';el.style.animation='staggerFade .3s ease 480ms both';}
       });
     }
   });
@@ -1494,10 +1494,10 @@ function toggleApiKey(type){
 function applyStagger(container,selector){
   if(!container)return;
   const items=container.querySelectorAll(selector);
-  const max=15;
+  const max=12;
   items.forEach((el,i)=>{
     if(i<max){el.style.animation='staggerFade .25s ease '+(i*25)+'ms both';}
-    else{el.style.opacity='1';el.style.animation='none';}
+    else{el.style.opacity='1';el.style.animation='staggerFade .25s ease 300ms both';}
   });
 }
 
