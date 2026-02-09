@@ -82,14 +82,16 @@ function showPage(name){
   if(name==='cashflow')renderCashFlow();
   if(name==='account')renderAccount();
   if(name==='settings')renderSettings();
-  // Apply stagger animation to all stagger-able children on page switch
-  setTimeout(()=>{
-    const page=$('#page-'+name);
-    if(page){
-      const items=page.querySelectorAll('.dash-card,.card,.playbook-card,.pnl-card,.settings-section,.insight-item,.activity-item,.kb-table tbody tr,#cf-summary > div,#kpi-grid > div,#trending-grid > div,#comp-grid > div,#comp-ads > div,#integrations-list > div > div');
-      const max=15;items.forEach((el,i)=>{if(i<max){el.style.animation='staggerFade .25s ease '+(i*25)+'ms both';}else{el.style.animation='none';el.style.opacity='1';}});
-    }
-  },10);
+  // Apply stagger animation only on tab switches (not initial load)
+  if(window._pageLoaded){
+    setTimeout(()=>{
+      const page=$('#page-'+name);
+      if(page){
+        const items=page.querySelectorAll('.dash-card,.card,.playbook-card,.pnl-card,.settings-section,.insight-item,.activity-item,.kb-table tbody tr,#cf-summary > div,#kpi-grid > div,#trending-grid > div,#comp-grid > div,#comp-ads > div,#integrations-list > div > div');
+        const max=15;items.forEach((el,i)=>{if(i<max){el.style.animation='none';el.offsetHeight;el.style.animation='staggerFade .25s ease '+(i*25)+'ms both';}else{el.style.animation='none';}});
+      }
+    },10);
+  }
 }
 
 /* ===== MODAL ===== */
@@ -1477,6 +1479,7 @@ function animateCountUp(el,target,duration){
 document.addEventListener('DOMContentLoaded',()=>{
   initTheme();
   renderDashboard();renderTasks();renderActivity();renderKBFilters();renderKB();renderPlaybooks();renderCashFlow();renderIntegrations();renderNotifs();renderTicker();renderCompetitors();renderTrending();renderPnL();
+  setTimeout(()=>{window._pageLoaded=true;},100);
   // Animate dashboard stat numbers on load
   setTimeout(()=>{
     document.querySelectorAll('#page-dashboard [style*="font-size:22px"]').forEach(el=>{
