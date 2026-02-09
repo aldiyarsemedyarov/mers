@@ -91,7 +91,7 @@ function showPage(name){
         el.style.opacity='0';
         el.style.animation='none';
         el.offsetHeight;
-        el.style.animation='staggerFade .4s ease '+(i*40)+'ms both';
+        el.style.animation='staggerFade .4s ease '+(i*50)+'ms both';
       });
     }
   });
@@ -1496,7 +1496,7 @@ function applyStagger(container,selector){
   const items=container.querySelectorAll(selector);
   items.forEach((el,i)=>{
     el.style.opacity='0';
-    el.style.animation='staggerFade .4s ease '+(i*40)+'ms both';
+    el.style.animation='staggerFade .4s ease '+(i*50)+'ms both';
   });
 }
 
