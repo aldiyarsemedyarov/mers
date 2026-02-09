@@ -73,7 +73,7 @@ sidebar-item.active{background:var(--accent-bg);color:var(--accent);font-weight:
 
 /* PAGES */
 .page{display:none;padding:24px;padding-bottom:48px;margin-left:220px}
-.page.active{display:block;animation:pageIn .35s ease}
+.page.active{display:block}
 
 /* Tooltips */
 [data-tooltip]{position:relative}
