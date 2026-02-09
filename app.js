@@ -1012,8 +1012,8 @@ function renderNotifs(){
   </div>`).join('')}`;
 }
 
-function toggleNotifs(){
-  event.stopPropagation();
+function toggleNotifs(e){
+  if(e)e.stopPropagation();
   const p=$('#notif-panel');p.classList.toggle('open');
   document.addEventListener('click',()=>p.classList.remove('open'),{once:true});
 }
