@@ -554,23 +554,23 @@ function renderTreeNode(nodeOrId){
 
 /* ===== CASH FLOW ===== */
 const cfData={
-  7:{revenue:125000,channels:{meta:75000,tiktok:31250,google:12500,organic:6250},
-    adSpend:48750,adBreak:{prospecting:29250,retargeting:14625,lookalike:4875},
-    cogs:35000,cogsBreak:{product:28000,packaging:4200,samples:2800},
-    shipping:10625,shipBreak:{standard:7438,express:3187},
-    fees:4375,apps:2188,returns:3750,tax:6250,
+  7:{revenue:18200,channels:{meta:10900,tiktok:4550,google:1820,organic:930},
+    adSpend:6370,adBreak:{prospecting:3822,retargeting:1911,lookalike:637},
+    cogs:5460,cogsBreak:{product:4368,packaging:655,samples:437},
+    shipping:1638,shipBreak:{standard:1147,express:491},
+    fees:637,apps:328,returns:546,tax:910,
   },
-  30:{revenue:500000,channels:{meta:300000,tiktok:125000,google:50000,organic:25000},
-    adSpend:195000,adBreak:{prospecting:117000,retargeting:58500,lookalike:19500},
-    cogs:140000,cogsBreak:{product:112000,packaging:16800,samples:11200},
-    shipping:42500,shipBreak:{standard:29750,express:12750},
-    fees:17500,apps:8750,returns:15000,tax:25000,
+  30:{revenue:72800,channels:{meta:43680,tiktok:18200,google:7280,organic:3640},
+    adSpend:25480,adBreak:{prospecting:15288,retargeting:7644,lookalike:2548},
+    cogs:21840,cogsBreak:{product:17472,packaging:2621,samples:1747},
+    shipping:6552,shipBreak:{standard:4586,express:1966},
+    fees:2548,apps:1274,returns:2184,tax:3640,
   },
-  90:{revenue:1400000,channels:{meta:840000,tiktok:350000,google:140000,organic:70000},
-    adSpend:546000,adBreak:{prospecting:327600,retargeting:163800,lookalike:54600},
-    cogs:392000,cogsBreak:{product:313600,packaging:47040,samples:31360},
-    shipping:119000,shipBreak:{standard:83300,express:35700},
-    fees:49000,apps:24500,returns:42000,tax:70000,
+  90:{revenue:205400,channels:{meta:123240,tiktok:51350,google:20540,organic:10270},
+    adSpend:71890,adBreak:{prospecting:43134,retargeting:21567,lookalike:7189},
+    cogs:61620,cogsBreak:{product:49296,packaging:7393,samples:4931},
+    shipping:18486,shipBreak:{standard:12940,express:5546},
+    fees:7189,apps:3595,returns:6162,tax:10270,
   }
 };
 
@@ -792,22 +792,22 @@ function exportCSV(){
 
 /* ===== ANALYTICS ===== */
 const anData={
-  '7d':{visitors:38400,orders:980,revenue:125000,adSpend:48750,cr:2.55,aov:127.5,cpa:49.7,roas:2.56,
-    revDays:[15800,16200,17100,17900,18800,19200,20000],adsDays:[6200,6400,6800,6900,7100,7300,8050],
+  '7d':{visitors:5600,orders:142,revenue:18200,adSpend:6370,cr:2.54,aov:128.2,cpa:44.9,roas:2.86,
+    revDays:[2300,2380,2510,2640,2760,2820,2790],adsDays:[810,840,890,920,950,980,980],
     traffic:[{n:'Meta Ads',v:52,c:'#4da6ff'},{n:'TikTok Ads',v:22,c:'#ff6b9d'},{n:'Google',v:14,c:'#ffd93d'},{n:'Direct',v:8,c:'#2ed573'},{n:'Email',v:4,c:'#ff6b6b'}],
     products:[{n:'Compression Leggings — Black',v:32,c:'#c8ff00'},{n:'Waist Trainer Pro',v:24,c:'#4da6ff'},{n:'Compression Leggings — Navy',v:18,c:'#ff9f43'},{n:'Arm Shaper Set',v:14,c:'#a855f7'},{n:'Thigh Trimmer',v:12,c:'#2ed573'}],
-    funnel:[{n:'Sessions',v:38400},{n:'Add to Cart',v:4120},{n:'Checkout',v:1980},{n:'Purchase',v:980}]},
-  '30d':{visitors:152000,orders:3900,revenue:500000,adSpend:195000,cr:2.57,aov:128.2,cpa:50.0,roas:2.56,
-    revDays:[14000,14500,15200,16000,15800,16500,17200,17800,16200,16800,17500,17000,16200,16800,17200,17800,18500,18200,17500,16800,16200,15800,16500,17200,18000,17800,17200,16800,16400,16000],
-    adsDays:[5400,5600,5900,6200,6100,6400,6700,6900,6300,6500,6800,6600,6300,6500,6700,6900,7200,7100,6800,6500,6300,6100,6400,6700,7000,6900,6700,6500,6400,6200],
+    funnel:[{n:'Sessions',v:5600},{n:'Add to Cart',v:602},{n:'Checkout',v:289},{n:'Purchase',v:142}]},
+  '30d':{visitors:22100,orders:568,revenue:72800,adSpend:25480,cr:2.57,aov:128.2,cpa:44.9,roas:2.86,
+    revDays:[2050,2120,2220,2340,2310,2410,2510,2600,2370,2460,2560,2490,2370,2460,2510,2600,2710,2660,2560,2460,2370,2310,2410,2510,2630,2600,2510,2460,2350,2340],
+    adsDays:[790,820,860,910,890,930,980,1010,920,950,990,960,920,950,980,1010,1050,1040,990,950,920,890,930,980,1020,1010,980,950,930,910],
     traffic:[{n:'Meta Ads',v:50,c:'#4da6ff'},{n:'TikTok Ads',v:23,c:'#ff6b9d'},{n:'Google',v:15,c:'#ffd93d'},{n:'Direct',v:8,c:'#2ed573'},{n:'Email',v:4,c:'#ff6b6b'}],
     products:[{n:'Compression Leggings — Black',v:30,c:'#c8ff00'},{n:'Waist Trainer Pro',v:25,c:'#4da6ff'},{n:'Compression Leggings — Navy',v:19,c:'#ff9f43'},{n:'Arm Shaper Set',v:15,c:'#a855f7'},{n:'Thigh Trimmer',v:11,c:'#2ed573'}],
-    funnel:[{n:'Sessions',v:152000},{n:'Add to Cart',v:16400},{n:'Checkout',v:7900},{n:'Purchase',v:3900}]},
-  '90d':{visitors:445000,orders:11200,revenue:1400000,adSpend:546000,cr:2.52,aov:125.0,cpa:48.8,roas:2.56,
+    funnel:[{n:'Sessions',v:22100},{n:'Add to Cart',v:2380},{n:'Checkout',v:1148},{n:'Purchase',v:568}]},
+  '90d':{visitors:64200,orders:1624,revenue:205400,adSpend:71890,cr:2.53,aov:126.5,cpa:44.3,roas:2.86,
     revDays:[],adsDays:[],
     traffic:[{n:'Meta Ads',v:48,c:'#4da6ff'},{n:'TikTok Ads',v:25,c:'#ff6b9d'},{n:'Google',v:15,c:'#ffd93d'},{n:'Direct',v:8,c:'#2ed573'},{n:'Email',v:4,c:'#ff6b6b'}],
     products:[{n:'Compression Leggings — Black',v:29,c:'#c8ff00'},{n:'Waist Trainer Pro',v:26,c:'#4da6ff'},{n:'Compression Leggings — Navy',v:19,c:'#ff9f43'},{n:'Arm Shaper Set',v:15,c:'#a855f7'},{n:'Thigh Trimmer',v:11,c:'#2ed573'}],
-    funnel:[{n:'Sessions',v:445000},{n:'Add to Cart',v:48000},{n:'Checkout',v:23000},{n:'Purchase',v:11200}]}
+    funnel:[{n:'Sessions',v:64200},{n:'Add to Cart',v:6920},{n:'Checkout',v:3330},{n:'Purchase',v:1624}]}
 };
 for(let i=0;i<90;i++){anData['90d'].revDays.push(13000+Math.round(Math.random()*6000));anData['90d'].adsDays.push(5000+Math.round(Math.random()*2500))}
 
@@ -952,10 +952,10 @@ const chatCommands=[
    action:()=>{addChatMsg('system','⚡ Researching trending products in fitness/beauty...');
     setTimeout(()=>{addChatMsg('agent','Top 3 trending products this week:\n\n1. 🏆 **Neck & Jaw Exerciser** — 340% search growth, low competition, $3 COGS / $24 sell price, 8x markup\n2. 🔥 **Ice Roller Face Massager** — 180% growth, medium competition, $2 COGS / $19 price\n3. ⭐ **Posture Corrector Belt** — 95% growth, high competition but high volume, $4 COGS / $29 price\n\nWant me to find suppliers and create a test campaign for any of these?');},1800);}},
   {match:/how.*(doing|going|performance|revenue|today)/i,
-   action:()=>{setTimeout(()=>{addChatMsg('agent',`Here's your daily snapshot:\n\n📊 Today so far:\n• Revenue: $17,842 (+12% vs yesterday)\n• Orders: 142\n• Ad Spend: $6,920\n• ROAS: 2.58x\n• Best performer: "UGC Leggings Hook #3" (4.2x ROAS)\n\n🟢 All systems healthy. No kill rules triggered. Klaviyo welcome flow sent 89 emails (32% open rate).\n\nAnything specific you want me to dig into?`);},800);}},
+   action:()=>{setTimeout(()=>{addChatMsg('agent',`Here's your daily snapshot:\n\n📊 Today so far:\n• Revenue: $2,614 (+12% vs yesterday)\n• Orders: 68\n• Ad Spend: $849\n• ROAS: 3.08x\n• Best performer: "UGC Leggings Hook #3" (4.2x ROAS)\n\n🟢 All systems healthy. No kill rules triggered. Klaviyo welcome flow sent 89 emails (32% open rate).\n\nAnything specific you want me to dig into?`);},800);}},
   {match:/compare|before.*after|project|simulate|what.*if/i,
    action:()=>{addChatMsg('system','⚡ Running P&L simulation...');
-    setTimeout(()=>{addChatMsg('agent','Here\'s the before/after if we implement the top 3 suggestions:\n\n**Current → Projected (30 days):**\n• Revenue: $500K → $612K (+22%)\n• CR: 2.57% → 3.34% (urgency + trust)\n• CPM: $38 → $22 (broad targeting)\n• AOV: $128 → $147 (bundles + BNPL)\n• Net Margin: 11.1% → 16.8%\n• Net Profit: $55K → $103K (+87%)\n\nI\'ve updated the Cash Flow tab with a Before/After toggle. Check it out!');
+    setTimeout(()=>{addChatMsg('agent','Here\'s the before/after if we implement the top 3 suggestions:\n\n**Current → Projected (30 days):**\n• Revenue: $72.8K → $88.8K (+22%)\n• CR: 2.57% → 3.34% (urgency + trust)\n• CPM: $38 → $22 (broad targeting)\n• AOV: $42 → $48 (bundles + BNPL)\n• Net Margin: 11.1% → 16.8%\n• Net Profit: $8.1K → $14.9K (+84%)\n\nI\'ve updated the Cash Flow tab with a Before/After toggle. Check it out!');
       showBeforeAfter=true;renderCashFlow();},2000);}},
   {match:/margin|profit|unit economics|p&l|pnl/i,
    action:()=>{setTimeout(()=>{addChatMsg('agent','Here\'s your product P&L snapshot:\n\n🖤 **Compression Leggings Black** — 33.9% margin (best)\n🔥 **Waist Trainer Pro** — 31.2% margin\n💙 **Compression Leggings Navy** — 27.0% margin\n📦 **Bundle (Leggings + Trainer)** — 30.8% margin\n💪 **Arm Shaper** — 27.3% margin\n🦵 **Thigh Trimmer** — 28.4% margin\n\nAverage blended margin: **29.8%**. Target is 30%+. The Navy leggings are underperforming — consider raising price by $3 or finding a cheaper supplier.\n\nFull breakdown in the P&L tab.');showPage('pnl')},800);}},
@@ -1297,12 +1297,12 @@ function handleCmdKey(e){
 
 /* ===== PRODUCT P&L ===== */
 const products=[
-  {name:'Compression Leggings — Black',orders:1420,revenue:55380,cogs:11928,shipping:4544,adCost:18176,fees:1938,returns:1107,img:'🖤'},
-  {name:'Waist Trainer Pro',orders:890,revenue:43610,cogs:8010,shipping:2848,adCost:15274,fees:1526,returns:872,img:'🔥'},
-  {name:'Compression Leggings — Navy',orders:680,revenue:26520,cogs:5712,shipping:2176,adCost:10608,fees:928,returns:530,img:'💙'},
-  {name:'Arm Shaper Set',orders:520,revenue:17680,cogs:4160,shipping:1664,adCost:7072,fees:619,returns:354,img:'💪'},
-  {name:'Thigh Trimmer',orders:390,revenue:11310,cogs:2730,shipping:1248,adCost:4524,fees:396,returns:226,img:'🦵'},
-  {name:'Leggings + Trainer Bundle',orders:310,revenue:24490,cogs:5580,shipping:992,adCost:7347,fees:857,returns:490,img:'📦'},
+  {name:'Compression Leggings — Black',orders:412,revenue:16084,cogs:3460,shipping:1318,adCost:5276,fees:563,returns:321,img:'🖤'},
+  {name:'Waist Trainer Pro',orders:258,revenue:12642,cogs:2322,shipping:826,adCost:4425,fees:442,returns:253,img:'🔥'},
+  {name:'Compression Leggings — Navy',orders:197,revenue:7683,cogs:1655,shipping:630,adCost:3073,fees:269,returns:154,img:'💙'},
+  {name:'Arm Shaper Set',orders:151,revenue:5134,cogs:1208,shipping:483,adCost:2054,fees:180,returns:103,img:'💪'},
+  {name:'Thigh Trimmer',orders:113,revenue:3277,cogs:791,shipping:362,adCost:1311,fees:115,returns:66,img:'🦵'},
+  {name:'Leggings + Trainer Bundle',orders:90,revenue:7110,cogs:1620,shipping:288,adCost:2133,fees:249,returns:142,img:'📦'},
 ];
 
 function renderPnL(){
