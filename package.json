@@ -1,0 +1,11 @@
+{
+  "name": "mers-tool",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Build script goes here'",
+    "deploy": "echo 'Deploy script goes here'"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
